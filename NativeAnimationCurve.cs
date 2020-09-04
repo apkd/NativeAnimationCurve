@@ -8,7 +8,7 @@ using Unity.Mathematics;
 using UnityEngine;
 
 /// <summary>
-/// Struct representing an <see cref="AnimationCurve"/> that can be used with the Burst Compiler..
+/// Struct representing an <see cref="AnimationCurve"/> that can be used with the Burst Compiler.
 /// </summary>
 public struct NativeAnimationCurve : IDisposable
 {
@@ -84,8 +84,8 @@ public struct NativeAnimationCurve : IDisposable
             if (time < animationData.soaTimes[i] || time >= animationData.soaTimes[i + 1])
                 continue;
 
-            var left = animationData.keyframes[i];
-            var right = animationData.keyframes[i + 1];
+            ref var left = ref animationData.keyframes[i];
+            ref var right = ref animationData.keyframes[i + 1];
             animationData.cachedIndex[threadIndex] = i;
 
             return EvaluateInternal(time, left.time, left.value, left.outTangent, right.time, right.value, right.inTangent);
