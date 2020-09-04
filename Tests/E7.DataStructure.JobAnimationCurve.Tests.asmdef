@@ -1,7 +1,7 @@
 {
-    "name": "E7.DataStructure.JobAnimationCurve.Tests",
+    "name": "NativeAnimationCurve.Tests",
     "references": [
-        "E7.DataStructure.JobAnimationCurve",
+        "NativeAnimationCurve",
         "Unity.Burst",
         "Unity.Mathematics"
     ],

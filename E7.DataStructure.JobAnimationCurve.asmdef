@@ -1,5 +1,5 @@
 {
-    "name": "E7.DataStructure.JobAnimationCurve",
+    "name": "NativeAnimationCurve",
     "references": [
         "Unity.Collections",
         "Unity.Mathematics",
