@@ -79,7 +79,7 @@ public struct NativeAnimationCurve : IDisposable
         ref var animationData = ref animationDataBlob.Value;
 
         int n = animationData.soaTimes.Length;
-        for (int i = animationData.cachedIndex[threadIndex], count = 0; count < n; count++, i = (i + 1) % n)
+        for (int i = animationData.cachedIndex[threadIndex], count = 0; count < n; count++, i = (i + 1) % (n - 1))
         {
             if (time < animationData.soaTimes[i] || time >= animationData.soaTimes[i + 1])
                 continue;
