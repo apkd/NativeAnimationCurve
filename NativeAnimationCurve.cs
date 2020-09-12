@@ -79,6 +79,9 @@ public struct NativeAnimationCurve : IDisposable
         ref var animationData = ref animationDataBlob.Value;
 
         int n = animationData.soaTimes.Length;
+        
+        if (n == 0)
+            return float.NaN;
 
         if (time <= animationData.soaTimes[0])
             return animationData.keyframes[0].value;
